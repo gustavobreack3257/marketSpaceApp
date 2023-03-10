@@ -18,7 +18,7 @@ export function Input({errorMessage = null, isPasswoard = false,  isInvalid, ...
         <Center >
         <FormControl isInvalid={invalid}>
             <NativeBaseInput
-            bg='white'
+            bg='#F7F7F8'
             height={45}
             width={279}
             px={4}

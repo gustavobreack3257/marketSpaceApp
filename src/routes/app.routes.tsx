@@ -1,6 +1,6 @@
 import {useTheme} from 'native-base'
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
-import { Platform, TouchableOpacity } from 'react-native'
+import { Platform} from 'react-native'
 
 import HomeIcon from '@assets/home.svg'
 import AdsIcon from '@assets/ads.svg'
@@ -8,8 +8,8 @@ import ExitIcon from '@assets/exit.svg'
 
 
 import { Home } from '@screens/Home'
-import { MyAds } from '@screens/myAds'
-import {Login} from '@screens/login'
+import { MyAds } from '@screens/MyAds'
+import {Login} from '@screens/Login'
 import { useState } from 'react'
 
 type appConfigProps = {
@@ -37,8 +37,8 @@ export function AppRoutes({press = false}: appConfigProps){
         <Navigator screenOptions={{
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarActiveTintColor: colors.green[500],
-            tabBarInactiveTintColor: colors.gray[300],
+            tabBarActiveTintColor: colors.gray[300],
+            tabBarInactiveTintColor: colors.black,
             tabBarStyle: {
                 backgroundColor: '#F7F7F8',
                 borderTopWidth: 0,
