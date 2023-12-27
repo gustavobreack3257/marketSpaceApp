@@ -6,7 +6,7 @@ import {Karla_400Regular, Karla_700Bold, useFonts} from '@expo-google-fonts/karl
 
 import { THEME } from "./src/theme";
 
-import { Login } from "@screens/login";
+import { Login } from "@screens/Login";
 
 export default function App() {
   const [fontsLoaded] = useFonts({Karla_400Regular, Karla_700Bold})
