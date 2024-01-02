@@ -7,15 +7,14 @@ import {Karla_400Regular, Karla_700Bold, useFonts} from '@expo-google-fonts/karl
 import { THEME } from "./src/theme";
 
 import { Login } from "@screens/Login";
-
+import { Register } from "@screens/Register";
+import { Routes } from "./src/routes";
 export default function App() {
   const [fontsLoaded] = useFonts({Karla_400Regular, Karla_700Bold})
   return (
     <NativeBaseProvider theme={THEME}>
-      <View >
-        {fontsLoaded ? <Login/> : []}
+        {fontsLoaded ? <Routes/> : []}
         <StatusBar style="auto" />
-      </View>
     </NativeBaseProvider>
   );
 }

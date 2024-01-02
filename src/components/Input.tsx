@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { TouchableOpacity } from "react-native";
+import { Eye, EyeSlash } from "phosphor-react-native";
+
 import {
   Center,
   Input as NativeBaseInput,
@@ -5,11 +9,6 @@ import {
   View,
   HStack,
 } from "native-base";
-import { color } from "native-base/lib/typescript/theme/styled-system";
-
-import { Eye, EyeSlash } from "phosphor-react-native";
-import { useState } from "react";
-import { TouchableOpacity } from "react-native";
 
 type Props = IInputProps & {
   showIsPassword?: boolean;
@@ -41,7 +40,7 @@ export function Input({ showIsPassword = false,  ...rest }: Props) {
 
           <Center backgroundColor="gray.700" mt="4" pr="4" h='12'
           borderBottomRightRadius={6} borderTopRightRadius={6}>
-            { closeIsPassword ? <EyeSlash color="#5F5B62" weight="regular" size={20}/> :<Eye color="#5F5B62" weight="regular" size={20} />}
+            { closeIsPassword ? <EyeSlash color="#5F5B62" weight="regular" size={20}/> : <Eye color="#5F5B62" weight="regular" size={20} />}
           </Center>
 
           </TouchableOpacity>
