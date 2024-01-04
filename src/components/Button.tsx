@@ -13,6 +13,7 @@ import {
   TrashSimple,
   ArrowLeft,
   Tag,
+  Plus
 } from "phosphor-react-native";
 
 type Props = IButtonProps & {
@@ -32,7 +33,7 @@ export function Button({
   variant = "solid",
   bgColor,
   showIcon = false,
-  iconVariation = "PRIMARY",
+  iconVariation ,
   ...rest
 }: Props) {
   const { colors } = useTheme();
@@ -41,6 +42,7 @@ export function Button({
     <ButtonNativeBase
       w='72'
       h='12'
+      px='3'
       bg={
         variant === "solid" && bgColor === "PRIMARY"
           ? "blue.30"
@@ -67,9 +69,10 @@ export function Button({
             <TrashSimple weight="regular" size={14} color={colors.gray[300]} />
           ) : iconVariation === "QUATERNARY" ? (
             <ArrowLeft weight="regular" size={14} color={colors.gray[200]} />
-          ) : (
+          ) : iconVariation === 'QUINARY' ?(
             <Tag weight="regular" size={14} color={colors.gray[600]} />
-          )}
+          ):  <Plus weight="regular" size={16} color={colors.gray[600]} />
+        }
         </Center>
       ) : null}
       <Text color={bgColor ? "gray.700": "gray.200"} fontFamily="heading" fontSize="sm" ml="2">

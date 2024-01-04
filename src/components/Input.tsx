@@ -8,6 +8,7 @@ import {
   IInputProps,
   View,
   HStack,
+  useTheme,
 } from "native-base";
 
 type Props = IInputProps & {
@@ -17,6 +18,8 @@ type Props = IInputProps & {
 
 export function Input({ showIsPassword = false,  ...rest }: Props) {
   const [ closeIsPassword, setCloseIsPassword] = useState(false);
+
+  const {colors} = useTheme()
   return (
     <Center>
       {showIsPassword ? (
@@ -40,7 +43,7 @@ export function Input({ showIsPassword = false,  ...rest }: Props) {
 
           <Center backgroundColor="gray.700" mt="4" pr="4" h='12'
           borderBottomRightRadius={6} borderTopRightRadius={6}>
-            { closeIsPassword ? <EyeSlash color="#5F5B62" weight="regular" size={20}/> : <Eye color="#5F5B62" weight="regular" size={20} />}
+            { closeIsPassword ? <EyeSlash color={colors.gray[300]} weight="regular" size={20}/> : <Eye color={colors.gray[300]} weight="regular" size={20} />}
           </Center>
 
           </TouchableOpacity>

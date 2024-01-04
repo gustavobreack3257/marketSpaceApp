@@ -1,18 +1,16 @@
 import { VStack, Center, Heading, Text, View } from "native-base";
 import { useNavigation } from "@react-navigation/native";
-import {AuthNavigatorRoutesProps} from '@routes/auth.routes'
+import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 
 import LogSvg from "@assets/Log.svg";
 
-
 export function Login() {
-
   const navigation = useNavigation<AuthNavigatorRoutesProps>();
 
-  function handleNewRegister(){
-    navigation.navigate('register')
+  function handleNewRegister() {
+    navigation.navigate("register");
   }
   return (
     <VStack>
@@ -55,7 +53,12 @@ export function Login() {
           Ainda não tem acesso?
         </Text>
 
-        <Button title="Criar uma conta" variant='outline' mt='4' onPress={handleNewRegister} />
+        <Button
+          title="Criar uma conta"
+          variant="outline"
+          mt="4"
+          onPress={handleNewRegister}
+        />
       </Center>
     </VStack>
   );

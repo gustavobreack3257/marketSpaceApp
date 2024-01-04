@@ -8,10 +8,9 @@ import AvatarSvg from "@assets/ProfileSvg.svg";
 import { Button } from "@components/Button";
 import { useNavigation } from "@react-navigation/native";
 export function Register() {
-
   const navigation = useNavigation();
 
-  function handleGoBack(){
+  function handleGoBack() {
     navigation.goBack();
   }
   return (
@@ -63,10 +62,16 @@ export function Register() {
 
       <Center mt="12">
         <Text fontFamily="body" fontSize="sm" color="gray.200">
-        {" "}Já tem uma conta?
+          {" "}
+          Já tem uma conta?
         </Text>
 
-        <Button title="Ir para o login" variant='outline' mt="4" onPress={handleGoBack} />
+        <Button
+          title="Ir para o login"
+          variant="outline"
+          mt="4"
+          onPress={handleGoBack}
+        />
       </Center>
     </View>
   );
