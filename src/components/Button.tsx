@@ -45,7 +45,7 @@ export function Button({
       px='3'
       bg={
         variant === "solid" && bgColor === "PRIMARY"
-          ? "blue.30"
+          ? "blue.200"
           : variant === "solid" && bgColor === "SECONDARY"
           ? "gray.100"
           : "gray.500"
@@ -53,8 +53,8 @@ export function Button({
       rounded={6}
       _pressed={{
         borderWidth: 1,
-        borderColor: 'blue.30',
-        bg: variant === 'solid' && bgColor === "PRIMARY" ? 'gray.100': variant === 'solid' && bgColor === "SECONDARY" ?'blue.30': 'gray.500'
+        borderColor: 'blue.200',
+        bg: variant === 'solid' && bgColor === "PRIMARY" ? 'gray.100': variant === 'solid' && bgColor === "SECONDARY" ?'blue.200': 'gray.500'
       }}
       {...rest}
     >

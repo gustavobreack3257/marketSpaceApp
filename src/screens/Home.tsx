@@ -7,8 +7,7 @@ import {
   useTheme,
   ScrollView,
 } from "native-base";
-
-import { HomeHeader } from "@components/HomeHeader";
+import { TouchableOpacity } from "react-native";
 
 import ProductPNG from "@assets/Product.png";
 
@@ -18,11 +17,19 @@ import {
   MagnifyingGlass,
   Sliders,
 } from "phosphor-react-native";
+
+import { HomeHeader } from "@components/HomeHeader";
 import { Input } from "@components/Input";
-import { TouchableOpacity } from "react-native";
 import { ProductCard } from "@components/ProductCard";
+import { Modal } from "@components/Modal";
+import { useState } from "react";
 export function Home() {
   const { colors } = useTheme();
+
+  const [isDialogVisible, setDialogVisible] = useState(false);
+
+  const showDialog = () => setDialogVisible(true);
+  const hideDialog = () => setDialogVisible(false);
   return (
     <VStack flex={1} bg="gray.600" px="6" pt="16">
       <HomeHeader name="Gustavo" />
@@ -81,7 +88,7 @@ export function Home() {
           |{" "}
         </Text>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={showDialog}>
           <Sliders
             weight="regular"
             size={20}
@@ -90,6 +97,8 @@ export function Home() {
           />
         </TouchableOpacity>
       </HStack>
+
+      <Modal visible={isDialogVisible} isClose={hideDialog}/>
 
       <ScrollView mt="6">
         <ProductCard source={ProductPNG} name="Tênis vermelho" price="56,99" />

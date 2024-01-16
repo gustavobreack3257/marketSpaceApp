@@ -15,7 +15,7 @@ export function Login() {
   return (
     <VStack>
       <View
-        backgroundColor={"gray.600"}
+        backgroundColor="gray.600"
         height={624}
         w="full"
         borderBottomLeftRadius={24}

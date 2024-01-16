@@ -14,7 +14,7 @@ export function Register() {
     navigation.goBack();
   }
   return (
-    <View h="full" w="full" backgroundColor={"gray.600"}>
+    <View h="full" w="full" backgroundColor="gray.600">
       <VStack>
         <Center mt="16">
           <LogSvg />
