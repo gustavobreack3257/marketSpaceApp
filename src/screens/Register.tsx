@@ -1,4 +1,4 @@
-import { VStack, Center, Heading, Text, View } from "native-base";
+import { VStack, Center, Heading, Text, View, ScrollView } from "native-base";
 
 import { Input } from "@components/Input";
 
@@ -14,8 +14,8 @@ export function Register() {
     navigation.goBack();
   }
   return (
-    <View h="full" w="full" backgroundColor="gray.600">
-      <VStack>
+    <ScrollView showsVerticalScrollIndicator={false} h="full" w="full" px='12' backgroundColor="gray.600">
+      <VStack >
         <Center mt="16">
           <LogSvg />
           <Heading
@@ -56,7 +56,7 @@ export function Register() {
         <Input placeholder="Confirmar Senha" showIsPassword />
 
         <Center mt="6">
-          <Button title="Criar" bgColor="SECONDARY" />
+          <Button title="Criar" bgColor="SECONDARY" w='full'/>
         </Center>
       </VStack>
 
@@ -70,9 +70,11 @@ export function Register() {
           title="Ir para o login"
           variant="outline"
           mt="4"
+          mb='4'
+          w='full'
           onPress={handleGoBack}
         />
       </Center>
-    </View>
+    </ScrollView>
   );
 }

@@ -6,6 +6,7 @@ import {
   Heading,
   useTheme,
   ScrollView,
+  Center,
 } from "native-base";
 import { TouchableOpacity } from "react-native";
 
@@ -14,8 +15,7 @@ import ProductPNG from "@assets/Product.png";
 import {
   Tag,
   ArrowRight,
-  MagnifyingGlass,
-  Sliders,
+
 } from "phosphor-react-native";
 
 import { HomeHeader } from "@components/HomeHeader";
@@ -72,31 +72,7 @@ export function Home() {
         Compre produtos variados
       </Text>
 
-      <HStack bg="gray.700" h="12" mt="4" rounded={6}>
-        <Input mt="0" placeholder="Buscar anúncio" />
-
-        <TouchableOpacity>
-          <MagnifyingGlass
-            weight="regular"
-            size={20}
-            color={colors.gray[200]}
-            style={{ marginTop: 14 }}
-          />
-        </TouchableOpacity>
-        <Text mt="2" fontSize="lg" mx="1" color="gray.400">
-          {" "}
-          |{" "}
-        </Text>
-
-        <TouchableOpacity onPress={showDialog}>
-          <Sliders
-            weight="regular"
-            size={20}
-            color={colors.gray[200]}
-            style={{ marginTop: 14 }}
-          />
-        </TouchableOpacity>
-      </HStack>
+        <Input showIsIcon='PRIMARY' placeholder="Buscar anúncio" onFilter={showDialog}/>
 
       <Modal visible={isDialogVisible} isClose={hideDialog}/>
 

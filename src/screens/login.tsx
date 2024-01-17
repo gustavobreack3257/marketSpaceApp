@@ -13,10 +13,11 @@ export function Login() {
     navigation.navigate("register");
   }
   return (
-    <VStack>
+    <VStack bg='gray.700' h='full' w='full'>
       <View
+        flex={1}
         backgroundColor="gray.600"
-        height={624}
+        px='12'
         w="full"
         borderBottomLeftRadius={24}
         borderBottomRightRadius={24}
@@ -48,7 +49,7 @@ export function Login() {
         </Center>
       </View>
 
-      <Center mt="12">
+      <Center mt="20" bg='gray.700' mb='20'>
         <Text fontFamily="body" fontSize="sm" color="gray.200">
           Ainda não tem acesso?
         </Text>
