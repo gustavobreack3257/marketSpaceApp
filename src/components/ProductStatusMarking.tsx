@@ -12,12 +12,14 @@ import { XCircle } from "phosphor-react-native";
 
 type Props = IPressableProps & {
   title: string;
+  selectingBackGroundColor?: 'PRIMARY' | 'SECONDARY';
   isActivity?: boolean;
 
 };
 export function ProductStatusMarking({
   title,
   isActivity ,
+  selectingBackGroundColor,
   ...rest
 }: Props) {
   const { colors } = useTheme();
@@ -26,7 +28,7 @@ export function ProductStatusMarking({
     <Pressable
       justifyContent="center"
       alignItems="center"
-      bg={isActivity ? "blue.200" : "gray.500"}
+      bg={isActivity  ? "blue.200"  : selectingBackGroundColor === 'PRIMARY' ? 'blue.100': selectingBackGroundColor === 'SECONDARY' ? 'gray.200': 'gray.500' }
       rounded="full"
       w="20"
       h="7"
@@ -44,13 +46,13 @@ export function ProductStatusMarking({
           fontSize="xs"
           textTransform='uppercase'
           numberOfLines={1}
-          color={isActivity ? "white" : "gray.300"}
+          color={isActivity ? 'white' : selectingBackGroundColor ? 'gray.700' : 'gray.300'}
           mr='1'
         >
           {title}
         </Heading>
 
-        { isActivity ? <XCircle weight="fill" color={colors.gray[600]} size={16}/>: null}
+        { isActivity  ? <XCircle weight="fill" color={colors.gray[600]} size={16}/>: null}
       </HStack>
     </Pressable>
   );

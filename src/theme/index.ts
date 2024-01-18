@@ -40,6 +40,7 @@ export const THEME = extendTheme({
           xy: 32,
         },
         sizes: {
+          12: 52,
           14: 56,
           17: 68,
           18: 72,
