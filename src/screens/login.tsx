@@ -5,6 +5,7 @@ import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 
 import LogSvg from "@assets/Log.svg";
+import React from "react";
 
 export function Login() {
   const navigation = useNavigation<AuthNavigatorRoutesProps>();

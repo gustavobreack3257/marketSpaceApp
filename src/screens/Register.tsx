@@ -7,6 +7,7 @@ import AvatarSvg from "@assets/ProfileSvg.svg";
 
 import { Button } from "@components/Button";
 import { useNavigation } from "@react-navigation/native";
+import React from "react";
 export function Register() {
   const navigation = useNavigation();
 

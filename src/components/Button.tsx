@@ -15,6 +15,7 @@ import {
   Tag,
   Plus
 } from "phosphor-react-native";
+import React from "react";
 
 type Props = IButtonProps & {
   title: string;
@@ -70,7 +71,7 @@ export function Button({
           ) : iconVariation === "QUATERNARY" ? (
             <ArrowLeft weight="regular" size={14} color={colors.gray[200]} />
           ) : iconVariation === 'QUINARY' ?(
-            <Tag weight="regular" size={14} color={colors.gray[600]} />
+            <Tag weight="regular" size={14} color={variant === 'solid' ? colors.gray[600]: colors.gray[100]} />
           ):  <Plus weight="regular" size={16} color={colors.gray[600]} />
         }
         </Center>

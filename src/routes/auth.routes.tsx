@@ -4,6 +4,7 @@ import {
 } from "@react-navigation/native-stack";
 import { Login } from "@screens/Login";
 import { Register } from "@screens/Register";
+import React from "react";
 
 type AuthRoutes = {
   login: undefined;

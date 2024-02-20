@@ -23,6 +23,8 @@ import { Input } from "@components/Input";
 import { ProductCard } from "@components/ProductCard";
 import { Modal } from "@components/Modal";
 import { useState } from "react";
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
 export function Home() {
   const { colors } = useTheme();
 
@@ -30,6 +32,7 @@ export function Home() {
 
   const showDialog = () => setDialogVisible(true);
   const hideDialog = () => setDialogVisible(false);
+
   return (
     <VStack flex={1} bg="gray.600" px="6" pt="16">
       <HomeHeader name="Gustavo" />
@@ -38,6 +41,7 @@ export function Home() {
         Seus produtos anunciados para venda{" "}
       </Text>
 
+      <TouchableOpacity>
       <HStack h="17" w="full" bg="#DFE1EA" mt="3" borderRadius={8} px="5">
         <Tag
           weight="regular"
@@ -67,17 +71,18 @@ export function Home() {
           style={{ marginTop: 24 }}
         />
       </HStack>
+      </TouchableOpacity>
 
       <Text fontFamily="body" fontSize="sm" color="gray.300" mt="8">
         Compre produtos variados
       </Text>
 
-        <Input showIsIcon='PRIMARY' placeholder="Buscar anúncio" onFilter={showDialog}/>
+        <Input showIsIcon='PRIMARY' placeholder="Buscar anúncio" onFilter={showDialog} />
 
       <Modal visible={isDialogVisible} isClose={hideDialog}/>
 
       <ScrollView mt="6">
-        <ProductCard source={ProductPNG} name="Tênis vermelho" price="56,99" />
+        <ProductCard source={ProductPNG} showDetails name="Tênis vermelho" price="56,99"  />
       </ScrollView>
     </VStack>
   );

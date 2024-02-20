@@ -1,5 +1,6 @@
 import { HStack, View, Text, Pressable, IPressableProps } from "native-base";
 import { CheckFat} from 'phosphor-react-native'
+import React from "react";
 
 type Props = IPressableProps & {
   title: string;

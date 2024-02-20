@@ -11,12 +11,13 @@ import {
   Text,
   useTheme,
 } from "native-base";
+import React from "react";
 
 type Props = IInputProps & TouchableOpacityProps &{
   showIsPassword?: boolean;
-  showIsIcon: "PRIMARY" | "SECONDARY";
+  showIsIcon?: "PRIMARY" | "SECONDARY";
   onSearch?: () => void;
-  onFilter: () => void;
+  onFilter?: () => void;
 };
 
 export function Input({ showIsPassword = false, showIsIcon, onSearch, onFilter, ...rest }: Props) {
@@ -43,6 +44,9 @@ export function Input({ showIsPassword = false, showIsIcon, onSearch, onFilter, 
             color="gray.400"
             px="4"
             secureTextEntry={!closeIsPassword}
+            _focus={{
+              bg: 'gray.700',
+            }}
             {...rest}
           />
 
@@ -77,6 +81,9 @@ export function Input({ showIsPassword = false, showIsIcon, onSearch, onFilter, 
             color="gray.400"
             px="4"
             secureTextEntry={!closeIsPassword}
+            _focus={{
+              bg: 'gray.700',
+            }}
             {...rest}
           />
 
@@ -114,6 +121,9 @@ export function Input({ showIsPassword = false, showIsIcon, onSearch, onFilter, 
           color="gray.400"
           px="4"
           mt="4"
+          _focus={{
+            bg: 'gray.700',
+          }}
           {...rest}
         />
       )}
