@@ -2,11 +2,13 @@ import { Center, HStack, Image, VStack, Text, Heading } from "native-base";
 
 import ProfilePng from "@assets/Avatar.png";
 import { Button } from "./Button";
+import React from "react";
 
 type Props = {
     name: string;
+    onClick: () => void;
 }
-export function HomeHeader({name}: Props) {
+export function HomeHeader({name, onClick}: Props) {
   return (
     <Center>
       <HStack  >
@@ -22,7 +24,7 @@ export function HomeHeader({name}: Props) {
         <Text fontFamily='heading' fontSize='md' >{name}</Text>
         </VStack>
 
-        <Button showIcon bgColor='SECONDARY' title="Criar anúncio"  w='33' h='10'/>
+        <Button onPress={onClick} showIcon bgColor='SECONDARY' title="Criar anúncio"  w='33' h='10'/>
       </HStack>
     </Center>
   );

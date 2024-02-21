@@ -25,6 +25,7 @@ import { Modal } from "@components/Modal";
 import { useState } from "react";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import { AppNavigatorRoutesProps } from "@routes/app.routes";
 export function Home() {
   const { colors } = useTheme();
 
@@ -33,15 +34,24 @@ export function Home() {
   const showDialog = () => setDialogVisible(true);
   const hideDialog = () => setDialogVisible(false);
 
+  const navigation = useNavigation<AppNavigatorRoutesProps>();
+
+  function handleCreateAds(){
+    navigation.navigate('createAds');
+  }
+
+  function handleMyAds(){
+    navigation.navigate('createAds');
+  }
   return (
     <VStack flex={1} bg="gray.600" px="6" pt="16">
-      <HomeHeader name="Gustavo" />
+      <HomeHeader name="Gustavo" onClick={handleCreateAds} />
 
       <Text mt="10" fontFamily="body" fontSize="sm" color="gray.300">
         Seus produtos anunciados para venda{" "}
       </Text>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleMyAds}>
       <HStack h="17" w="full" bg="#DFE1EA" mt="3" borderRadius={8} px="5">
         <Tag
           weight="regular"

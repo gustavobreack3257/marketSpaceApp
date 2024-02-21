@@ -138,6 +138,7 @@ export function Modal({ visible, isClose, ...rest }: Props) {
           <HStack justifyContent="space-between" mt={Platform.OS === 'ios' ? '12': '8'} mb='8' w="full">
             <Button
               title="Resetar filtros"
+              h='10'
               w={Platform.OS === "ios" ? "46" : "40"}
               variant="outline"
               showIcon
@@ -148,6 +149,7 @@ export function Modal({ visible, isClose, ...rest }: Props) {
               title="Aplicar filtros"
               variant="solid"
               bgColor="SECONDARY"
+              h='10'
               w={Platform.OS === "ios" ? "46" : "40"}
               showIcon
               iconVariation="QUINARY"

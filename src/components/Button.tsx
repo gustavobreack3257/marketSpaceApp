@@ -55,7 +55,7 @@ export function Button({
       _pressed={{
         borderWidth: 1,
         borderColor: 'blue.200',
-        bg: variant === 'solid' && bgColor === "PRIMARY" ? 'gray.100': variant === 'solid' && bgColor === "SECONDARY" ?'blue.200': 'gray.500'
+        bg: bgColor === "PRIMARY"  ? 'gray.100': bgColor === "SECONDARY" || variant === 'outline' ? 'blue.200': 'gray.500'
       }}
       {...rest}
     >

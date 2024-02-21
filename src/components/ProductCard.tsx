@@ -39,6 +39,7 @@ export function ProductCard({
               alt="Produto cadastrado"
               h="24"
               w="full"
+              borderRadius={6}
               position="absolute"
               {...rest}
             />
@@ -76,7 +77,7 @@ export function ProductCard({
           </VStack>
       ) : (
         <View >
-          <Image alt="Produto cadastrado" h="24" w="full" {...rest} />
+          <Image alt="Produto cadastrado" h="24" w="full"  {...rest} />
         </View>
       )}
     </>
