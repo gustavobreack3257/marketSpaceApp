@@ -14,18 +14,21 @@ import { DetailsOfMyAds } from "@screens/DetailsOfMyAds";
 import { EditAds } from "@screens/EditAds";
 import { Home } from "@screens/Home";
 import { MyAds } from "@screens/MyAds";
+
 import {
   BottomTabNavigationProp,
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import { useTheme } from "native-base";
 import { AuthRoute } from "./auth.routes";
+import { ProductDetailsAds } from "@screens/ProductDetailsAds";
 
 type AppRoutesParamProps = {
-    bottomTabNavigation: undefined;
+  bottomTabNavigation: undefined;
   createAds: undefined;
   editAds: undefined;
   detailsOfMyAds: undefined;
+  productDetails: undefined;
 };
 
 type AppRoutesParamBottomTabProps = {
@@ -83,6 +86,8 @@ export function AppRoutes() {
       <Stack.Screen name="editAds" component={EditAds} />
 
       <Stack.Screen name="detailsOfMyAds" component={DetailsOfMyAds} />
+
+      <Stack.Screen name="productDetails" component={ProductDetailsAds} />
     </Stack.Navigator>
   );
 }

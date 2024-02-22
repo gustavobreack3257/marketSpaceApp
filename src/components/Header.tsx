@@ -1,6 +1,7 @@
 import { Center, HStack, Heading, Text, View, useTheme } from "native-base";
 
 import { ArrowLeft, Plus, PencilSimpleLine } from "phosphor-react-native";
+import React from "react";
 import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 
 type Props = TouchableOpacityProps & {
@@ -8,12 +9,19 @@ type Props = TouchableOpacityProps & {
   showAdCreationAndEditing?: boolean;
   iconVariant?: boolean;
   title?: string;
+  onClickCreatedAd?: () => void;
+  onClickGoBack?: () => void;
+  onClickEditAd?: () => void;
+
 };
 export function Header({
   showMyAds,
   iconVariant,
   showAdCreationAndEditing,
   title,
+  onClickCreatedAd,
+  onClickGoBack,
+  onClickEditAd,
   ...rest
 }: Props) {
   const { colors } = useTheme();
@@ -25,17 +33,17 @@ export function Header({
             {title}
           </Heading>
 
-          <TouchableOpacity style={{ marginTop: 2, marginLeft: 8 }} {...rest}>
+          <TouchableOpacity onPress={onClickCreatedAd} style={{ marginTop: 2, marginLeft: 8 }} {...rest}>
             <Plus size={24} weight="regular" color={colors.gray[100]} />
           </TouchableOpacity>
         </HStack>
       ) : iconVariant ? (
         <HStack justifyContent="space-between">
-          <TouchableOpacity {...rest}>
+          <TouchableOpacity onPress={onClickGoBack} {...rest}>
             <ArrowLeft size={24} weight="regular" color={colors.gray[100]} />
           </TouchableOpacity>
 
-          <TouchableOpacity {...rest}>
+          <TouchableOpacity onPress={onClickEditAd} {...rest}>
             <PencilSimpleLine
               size={24}
               weight="regular"
@@ -45,7 +53,7 @@ export function Header({
         </HStack>
       ) : showAdCreationAndEditing ? (
         <HStack w="full" justifyContent="flex-start">
-          <TouchableOpacity style={{ marginLeft: 8 }} {...rest}>
+          <TouchableOpacity onPress={onClickGoBack} style={{ marginLeft: 8 }} {...rest}>
             <ArrowLeft size={24} weight="regular" color={colors.gray[100]} />
           </TouchableOpacity>
 
@@ -54,7 +62,7 @@ export function Header({
           </Heading>
         </HStack>
       ) : (
-        <TouchableOpacity {...rest}>
+        <TouchableOpacity onPress={onClickGoBack} {...rest}>
           <ArrowLeft size={24} weight="regular" color={colors.gray[100]} />
         </TouchableOpacity>
       )}

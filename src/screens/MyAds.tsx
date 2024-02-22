@@ -1,10 +1,10 @@
-import { Text, View } from "native-base";
+import { View, Text } from "native-base";
 import React from "react";
 
 export function MyAds(){
-    return(
+     return(
         <View>
-            <Text>Myads</Text>
+            <Text>ola mundo</Text>
         </View>
-    )
+     )
 }

@@ -22,19 +22,20 @@ type Props = TouchableOpacityProps & IImageProps &
     name?: string;
     price?: string;
     showDetails?: boolean;
-
+    onClick?: () => void;
   };
 export function ProductCard({
   price,
   name,
   showDetails = false,
+  onClick,
   ...rest
 }: Props) {
   return (
     <>
       {showDetails ? (
           <VStack h="40" w="40" pb="16" >
-          <TouchableOpacity >
+          <TouchableOpacity onPress={onClick}>
             <Image
               alt="Produto cadastrado"
               h="24"

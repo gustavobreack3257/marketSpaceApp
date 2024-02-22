@@ -25,7 +25,7 @@ import { Modal } from "@components/Modal";
 import { useState } from "react";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { AppNavigatorRoutesProps } from "@routes/app.routes";
+import { AppNavigatorBottomTabRoutesProps, AppNavigatorRoutesProps } from "@routes/app.routes";
 export function Home() {
   const { colors } = useTheme();
 
@@ -41,7 +41,11 @@ export function Home() {
   }
 
   function handleMyAds(){
-    navigation.navigate('createAds');
+    navigation.navigate('detailsOfMyAds');
+  }
+
+  function handleProductDetailsAds(){
+    navigation.navigate('productDetails');
   }
   return (
     <VStack flex={1} bg="gray.600" px="6" pt="16">
@@ -92,7 +96,7 @@ export function Home() {
       <Modal visible={isDialogVisible} isClose={hideDialog}/>
 
       <ScrollView mt="6">
-        <ProductCard source={ProductPNG} showDetails name="Tênis vermelho" price="56,99"  />
+        <ProductCard source={ProductPNG} showDetails name="Tênis vermelho" price="56,99" onClick={handleProductDetailsAds}/>
       </ScrollView>
     </VStack>
   );
