@@ -27,6 +27,7 @@ type AppRoutesParamProps = {
   bottomTabNavigation: undefined;
   createAds: undefined;
   editAds: undefined;
+  myAds: undefined;
   detailsOfMyAds: undefined;
   productDetails: undefined;
 };
@@ -48,38 +49,55 @@ const Stack = createNativeStackNavigator<AppRoutesParamProps>();
 const Tab = createBottomTabNavigator<AppRoutesParamBottomTabProps>();
 
 export function AppRoutes() {
-    const {sizes, colors} = useTheme();
-
+  const { sizes, colors } = useTheme();
 
   function BottomTabNavigation() {
-    return <Tab.Navigator screenOptions={{headerShown: false, tabBarShowLabel: false, tabBarActiveTintColor: colors.blue[200], tabBarInactiveTintColor: colors.gray[100], tabBarStyle:{
-        backgroundColor: colors.gray[700],
-        paddingTop: sizes[6],
-        height: sizes[24]
+    return (
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarActiveTintColor: colors.blue[200],
+          tabBarInactiveTintColor: colors.gray[100],
+          tabBarStyle: {
+            backgroundColor: colors.gray[700],
+            paddingTop: sizes[6],
+            height: sizes[24],
+          },
+        }}
+      >
+        <Tab.Screen
+          name="home"
+          component={Home}
+          options={{
+            tabBarIcon: ({ color }) => <HouseSVG fill={color} />,
+          }}
+        />
 
-    }}}>
-      <Tab.Screen name="home" component={Home} options={{
-        tabBarIcon: ({color}) => (
-            <HouseSVG fill={color} />
-        )
-      }}/>
+        <Tab.Screen
+          name="myAds"
+          component={MyAds}
+          options={{
+            tabBarIcon: ({}) => <AdsSVG />,
+          }}
+        />
 
-      <Tab.Screen name="myAds" component={MyAds} options={{
-        tabBarIcon: ({}) => (
-            <AdsSVG/>
-        )
-      }}/>
-
-      <Tab.Screen name="exit" component={AuthRoute} options={{
-        tabBarIcon: ({color}) => (
-            <ExitSVG fill={color}/>
-        )
-      }} />
-    </Tab.Navigator>;
+        <Tab.Screen
+          name="exit"
+          component={AuthRoute}
+          options={{
+            tabBarIcon: ({ color }) => <ExitSVG fill={color} />,
+          }}
+        />
+      </Tab.Navigator>
+    );
   }
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="bottomTabNavigation" component={BottomTabNavigation} />
+      <Stack.Screen
+        name="bottomTabNavigation"
+        component={BottomTabNavigation}
+      />
 
       <Stack.Screen name="createAds" component={CreateAds} />
 
@@ -88,6 +106,8 @@ export function AppRoutes() {
       <Stack.Screen name="detailsOfMyAds" component={DetailsOfMyAds} />
 
       <Stack.Screen name="productDetails" component={ProductDetailsAds} />
+
+      <Stack.Screen name="myAds" component={MyAds} />
     </Stack.Navigator>
   );
 }

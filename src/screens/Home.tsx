@@ -41,7 +41,7 @@ export function Home() {
   }
 
   function handleMyAds(){
-    navigation.navigate('detailsOfMyAds');
+    navigation.navigate('myAds');
   }
 
   function handleProductDetailsAds(){

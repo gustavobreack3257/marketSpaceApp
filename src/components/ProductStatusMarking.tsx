@@ -9,6 +9,7 @@ import {
 
 
 import { XCircle } from "phosphor-react-native";
+import React from "react";
 
 type Props = IPressableProps & {
   title: string;

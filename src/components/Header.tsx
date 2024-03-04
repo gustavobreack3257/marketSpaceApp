@@ -26,7 +26,7 @@ export function Header({
 }: Props) {
   const { colors } = useTheme();
   return (
-    <View h="6" w="full" mt="16">
+    <View h="6" w="full" mt="12">
       {showMyAds ? (
         <HStack w="full" justifyContent="flex-end">
           <Heading w="64" textAlign="center" fontFamily="heading" fontSize="xl">
