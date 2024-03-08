@@ -2,7 +2,7 @@ import { Center, HStack, Heading, Text, View, useTheme } from "native-base";
 
 import { ArrowLeft, Plus, PencilSimpleLine } from "phosphor-react-native";
 import React from "react";
-import { TouchableOpacity, TouchableOpacityProps } from "react-native";
+import { Platform, TouchableOpacity, TouchableOpacityProps } from "react-native";
 
 type Props = TouchableOpacityProps & {
   showMyAds?: boolean;
@@ -28,8 +28,8 @@ export function Header({
   return (
     <View h="6" w="full" mt="12">
       {showMyAds ? (
-        <HStack w="full" justifyContent="flex-end">
-          <Heading w="64" textAlign="center" fontFamily="heading" fontSize="xl">
+        <HStack w="full" justifyContent="flex-end" >
+          <Heading h='6' w="70" textAlign="center" fontFamily="heading" fontSize="xl">
             {title}
           </Heading>
 

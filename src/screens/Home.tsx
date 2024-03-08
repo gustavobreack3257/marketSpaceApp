@@ -96,7 +96,7 @@ export function Home() {
       <Modal visible={isDialogVisible} isClose={hideDialog}/>
 
       <ScrollView mt="6">
-        <ProductCard source={ProductPNG} showDetails name="Tênis vermelho" price="56,99" onClick={handleProductDetailsAds}/>
+        <ProductCard source={ProductPNG} profile showDetails name="Tênis vermelho" price="56,99" onClick={handleProductDetailsAds}/>
       </ScrollView>
     </VStack>
   );
