@@ -14,16 +14,18 @@ import { ImageSourcePropType, TouchableOpacity, TouchableOpacityProps } from "re
 
 import ProfilePng from "@assets/Avatar.png";
 
-import { ProductStatusMarking } from "@components/ProductStatusMarking";
+import { ProductStatusMarking, backgroundColorSelectProps, nameStatusProductProps } from "@components/ProductStatusMarking";
 import React from "react";
 
 type Props = TouchableOpacityProps &
   IImageProps & {
     name: string;
+    nameStatusProduct?: nameStatusProductProps;
     price: string;
     picture: ImageSourcePropType;
     showDetails?: boolean;
     profile?: boolean;
+    backgroundSelectColor?: backgroundColorSelectProps;
     onClick?: () => void;
   };
 export function ProductCard({
@@ -32,17 +34,19 @@ export function ProductCard({
   picture,
   showDetails = false,
   profile,
+  backgroundSelectColor,
+  nameStatusProduct = 'NOVO',
   onClick,
   ...rest
 }: Props) {
   return (
     <>
       {showDetails ? (
-        <VStack h="40" w="40" pb="16" mr='16'>
+        <VStack h="46" w="46" pb="16" mr='3' >
           <TouchableOpacity onPress={onClick}>
             <Image
               alt="Produto cadastrado"
-              h="24"
+              h="30"
               w="full"
               borderRadius={6}
               position="absolute"
@@ -69,8 +73,8 @@ export function ProductCard({
                   h="4"
                   w="12"
                   mt="1"
-                  title="Usado"
-                  selectingBackGroundColor="PRIMARY"
+                  title={nameStatusProduct}
+                  selectingBackGroundColor={backgroundSelectColor}
                 />
               </HStack>
             ) : (
@@ -79,13 +83,13 @@ export function ProductCard({
                   h="4"
                   w="12"
                   mt="1"
-                  title="Usado"
-                  selectingBackGroundColor="PRIMARY"
+                  title={nameStatusProduct}
+                  selectingBackGroundColor={backgroundSelectColor}
                 />
               </View>
             )}
 
-            <Text fontFamily="body" fontSize="sm" color="gray.200">
+            <Text fontFamily="body" fontSize="sm" mt='4' color="gray.200">
               {name}
             </Text>
             <Text fontFamily="heading" fontSize="md" color="gray.100">

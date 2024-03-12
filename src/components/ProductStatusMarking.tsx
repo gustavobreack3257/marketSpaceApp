@@ -11,9 +11,11 @@ import {
 import { XCircle } from "phosphor-react-native";
 import React from "react";
 
+export type backgroundColorSelectProps = 'PRIMARY' | 'SECONDARY';
+export type nameStatusProductProps = 'NOVO' | 'USADO';
 type Props = IPressableProps & {
-  title: string;
-  selectingBackGroundColor?: 'PRIMARY' | 'SECONDARY';
+  title: nameStatusProductProps;
+  selectingBackGroundColor?: backgroundColorSelectProps;
   isActivity?: boolean;
 
 };
